@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  ruby:
+    build:
+      context: ./ruby
+      dockerfile: ./Dockerfile
+    stdin_open: true
+    volumes:
+      - ./ruby:/app
+  rust:
+    build:
+      context: ./rust
+      dockerfile: Dockerfile
+    volumes:
+      - ./rust:/app
